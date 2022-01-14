@@ -1,0 +1,10 @@
+module.exports={
+    red:{
+        color:'red',
+        fontSize:24
+      },
+      green:{
+        color:'green',
+        fontSize:20
+      }
+}
