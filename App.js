@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Button } from 'react-native-elements';
+import { View, Text } from 'react-native';
 
 class App extends Component {
   render() {
     return (
-      <Button title="Solid Button" />
+      <View>
+        <Text style={{color:'red', fontSize:24}}>osman forhad, Full Stack Developer</Text>
+      </View>
     );
   }
 }
