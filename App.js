@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import CustomStyle from "./asset/style/customStyle";
 import PageOne from './pages/PageOne';
 
@@ -18,6 +18,10 @@ class App extends Component {
     }
   }
 
+  changeInfo = () => {
+    this.setState({name:"Forhad", city:"Sylhet", Profession:"Software Enginearing"})
+  }
+
   render() {
     return (
       <View>
@@ -25,6 +29,7 @@ class App extends Component {
         <Text>Name: {this.state.name}</Text>
         <Text>Present Address: {this.state.city}</Text>
         <Text>Profession: {this.state.Profession}</Text>
+        <Button onPress={this.changeInfo} title="Clcik Here"></Button>
 
         <Text>The below Content is Comming from Page and Multiple Components:</Text>
         <PageOne />
