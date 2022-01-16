@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import CustomStyle from "./asset/style/customStyle";
+import ComponentOne from './components/ComponentOne';
 import PageOne from './pages/PageOne';
 
 class App extends Component {
@@ -36,6 +37,9 @@ class App extends Component {
 
         <Text>The below content is exmple of external styling:</Text>
         <Text style={CustomStyle.red}>osman forhad, Full Stack Developer</Text>
+
+        <Text>PROPOS Element Display Here as ComponentOne files value:</Text>
+        <ComponentOne name="osman" city="Dhaka" age="28" />
       </View>
     );
   }
