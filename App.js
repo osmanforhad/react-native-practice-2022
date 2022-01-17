@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 import CustomStyle from "./asset/style/customStyle";
 import ComponentOne from './components/ComponentOne';
 import PageOne from './pages/PageOne';
@@ -26,6 +26,10 @@ class App extends Component {
   render() {
     return (
       <View>
+        <View style={{height:165, width:"100%", backgroundColor:"black"}}>
+        {/* <Image style={{flexDirection:"row", justifyContent:"center", height:165, width:"100%"}} source={{uri:'https://www.channelionline.com/wp-content/uploads/2019/07/channel-i-logo-1.png'}} /> */}
+          <Image style={{flexDirection:"row", justifyContent:"center", height:165, width:"100%"}} source={require('./images/channel-i-logo.png')} />
+        </View>
         <View style={{flexDirection:"column", alignItems:"center", height:200, width:"100%", backgroundColor:'red'}}>
         <Text>Example of React Native Core View Component:</Text>
         <View style={{flexDirection:"column", alignItems:"center", height:150, width:"80%", backgroundColor:'green'}}>
