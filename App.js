@@ -26,10 +26,17 @@ class App extends Component {
   render() {
     return (
       <View>
+        <View style={{flexDirection:"column", alignItems:"center", height:200, width:"100%", backgroundColor:'red'}}>
+        <Text>Example of React Native Core View Component:</Text>
+        <View style={{flexDirection:"column", alignItems:"center", height:150, width:"80%", backgroundColor:'green'}}>
         <Text>The Below Property Comming From State Object:</Text>
+        <View style={{flexDirection:"column", alignItems:"center", height:100, width:"75%", backgroundColor:'white'}}>
         <Text>Name: {this.state.name}</Text>
         <Text>Present Address: {this.state.city}</Text>
         <Text>Profession: {this.state.Profession}</Text>
+        </View>
+        </View>
+        </View>
         <Button onPress={this.changeInfo} title="Clcik Here"></Button>
 
         <Text>The below Content is Comming from Page and Multiple Components:</Text>
