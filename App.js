@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, Image, ScrollView } from 'react-native';
 import CustomStyle from "./asset/style/customStyle";
 import ComponentOne from './components/ComponentOne';
 import PageOne from './pages/PageOne';
@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <View style={{height:165, width:"100%", backgroundColor:"black"}}>
         {/* <Image style={{flexDirection:"row", justifyContent:"center", height:165, width:"100%"}} source={{uri:'https://www.channelionline.com/wp-content/uploads/2019/07/channel-i-logo-1.png'}} /> */}
           <Image style={{flexDirection:"row", justifyContent:"center", height:165, width:"100%"}} source={require('./images/channel-i-logo.png')} />
@@ -43,15 +43,29 @@ class App extends Component {
         </View>
         <Button onPress={this.changeInfo} title="Clcik Here" color="teal"></Button>
 
-        <Text>The below Content is Comming from Page and Multiple Components:</Text>
+        <View>
+        <Text style={{color:"black"}}>The below Content is Comming from Page and Multiple Components:</Text>
         <PageOne />
+        </View>
 
-        <Text>The below content is exmple of external styling:</Text>
-        <Text style={CustomStyle.red}>osman forhad, Full Stack Developer</Text>
-
-        <Text>PROPOS Element Display Here as ComponentOne files value:</Text>
+        <View>
+        <Text style={{color:"black"}}>PROPOS Element Display Here as ComponentOne files value:</Text>
         <ComponentOne name="osman" city="Dhaka" age="28" />
-      </View>
+        </View>
+
+        <View>
+        <Text style={{color:"black"}}>The below content is exmple of external styling:</Text>
+          <ScrollView horizontal={true}>
+          <View>
+        <Text style={CustomStyle.red}>osman forhad, Full Stack Developer</Text>
+        </View>
+        <View>
+        <Text style={CustomStyle.green}>&nbsp;Specialst of Backend Development</Text>
+        </View>
+          </ScrollView>
+        </View>
+
+      </ScrollView>
     );
   }
 }
