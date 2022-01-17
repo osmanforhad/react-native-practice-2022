@@ -37,7 +37,7 @@ class App extends Component {
         </View>
         </View>
         </View>
-        <Button onPress={this.changeInfo} title="Clcik Here"></Button>
+        <Button onPress={this.changeInfo} title="Clcik Here" color="teal"></Button>
 
         <Text>The below Content is Comming from Page and Multiple Components:</Text>
         <PageOne />
