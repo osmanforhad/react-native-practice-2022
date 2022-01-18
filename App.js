@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, ScrollView, FlatList } from 'react-native';
+import { View, Text, Button, Image, ScrollView, FlatList, Alert } from 'react-native';
 import CustomStyle from "./asset/style/customStyle";
 import ComponentOne from './components/ComponentOne';
 import PageOne from './pages/PageOne';
@@ -36,7 +36,7 @@ class App extends Component {
     {title:"Indonesia", subtitle:"This is the Asian Nation Country", image:"https://cdn.pixabay.com/photo/2012/12/09/00/16/abstract-69124_960_720.jpg"},
   ];
 
-  ChildView= ({title, subtitle, thambnail}) => {
+  ChildView = ({title, subtitle, thambnail}) => {
     return(
       <View style={{backgroundColor:"white", margin:5, flex:100, flexDirection:"row"}}>
 
@@ -46,12 +46,16 @@ class App extends Component {
       </View>
 
       <View style={{flex:70, padding:10}}>
-      <Text style={{color:"black", fontSize: 18}}>{title}</Text>
+      <Text onPress={this.onItemClick.bind(this, title)} style={{color:"black", fontSize: 18}}>{title}</Text>
         <Text style={{color:"black", fontSize: 16}}>{subtitle}</Text>
       </View>
 
       </View>
     )
+  }
+
+  onItemClick = (ShowTitle) => {
+    Alert.alert(ShowTitle);
   }
 
 
