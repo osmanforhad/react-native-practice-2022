@@ -54,10 +54,6 @@ class App extends Component {
     )
   }
 
-  onItemClick = (ShowTitle) => {
-    Alert.alert(ShowTitle);
-  }
-
   JSONdataForVerticalListView = [
     {title:"Bangladesh", subtitle:"This is the Asian Nation Country", image: "https://cdn.pixabay.com/photo/2017/11/23/07/47/baby-2972221_960_720.jpg"},
     {title:"India", subtitle:"This is the Asian Nation Country", image: "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg"},
@@ -88,6 +84,43 @@ class App extends Component {
       </View>
     )
   }
+
+
+  JSONdataForVerticalGridView = [
+    {title:"Bijoy Software", subtitle:"Computer Programmer", image: "https://cdn.pixabay.com/photo/2021/12/02/02/59/mountains-6839521_960_720.jpg"},
+    {title:"Channel i", subtitle:"Wordpress Developer", image: "https://cdn.pixabay.com/photo/2019/06/09/10/22/lily-4261793_960_720.jpg"},
+    {title:"Cosmos MultiNational", subtitle:"Laravel and PHP Developer", image:"https://cdn.pixabay.com/photo/2022/01/15/15/30/lantern-6939870_960_720.jpg"},
+    {title:"Tech Vision orope Orion", subtitle:"Android App Developer and Backend", image:"https://cdn.pixabay.com/photo/2020/02/04/17/07/coffee-4818863_960_720.jpg"},
+    {title:"Code Boxer", subtitle:"Wordpress Plugin Developer", image:"https://cdn.pixabay.com/photo/2021/06/12/04/56/couple-6330001_960_720.png"},
+    {title:"Amir Group", subtitle:"Senior Programmer Laravel", image:"https://cdn.pixabay.com/photo/2020/02/06/18/43/santorini-4825173_960_720.jpg"},
+    {title:"Code2Creation", subtitle:"Full Stack Developer", image:"https://cdn.pixabay.com/photo/2022/01/16/10/01/fantasy-6941630_960_720.jpg"},
+    {title:"Yet to Come", subtitle:"Waiting for Next Chalange", image:"https://cdn.pixabay.com/photo/2021/11/20/05/15/car-6810885_960_720.jpg"},
+    {title:"Yet to Come", subtitle:"Waiting for Next Chalange", image:"https://cdn.pixabay.com/photo/2021/11/11/16/05/fruits-6786607_960_720.jpg"},
+    {title:"Yet to Come", subtitle:"Waiting for Next Chalange", image:"https://cdn.pixabay.com/photo/2021/09/07/11/53/car-6603726_960_720.jpg"},
+  ];
+
+  VerticalGridChildView = ({title, subtitle, thambnail}) => {
+    return(
+      <View style={{backgroundColor:"white", margin:5, flexDirection:"column", width:170, height:200}}>
+
+
+      <View>
+        <Image source={{uri:thambnail}} style={{width:"100%", height:100}} />
+      </View>
+
+      <View style={{padding:10}}>
+      <Text onPress={this.onItemClick.bind(this, title)} style={{color:"yellow", fontSize: 18}}>{title}</Text>
+        <Text style={{color:"black", fontSize: 16}}>{subtitle}</Text>
+      </View>
+
+      </View>
+    )
+  }
+
+  onItemClick = (ShowTitle) => {
+    Alert.alert(ShowTitle);
+  }
+
 
   render() {
     return (
@@ -128,6 +161,11 @@ class App extends Component {
         <View>
         <Text style={{color:"black"}}>PROPOS Element Display Here as ComponentOne files value:</Text>
         <ComponentOne name="osman" city="Dhaka" age="28" />
+        </View>
+
+        <View>
+        <Text style={{color:"black"}}>The below content is exmple of external styling and Horizontal Flat List:</Text>
+          <FlatList numColumns={2} horizontal={false} data={this.JSONdataForVerticalGridView} renderItem={({item}) => <this.HorizontalChildView title={item.title} subtitle={item.subtitle} thambnail={item.image} /> } />
         </View>
 
         <View>
